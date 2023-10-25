@@ -5,6 +5,9 @@
 
 template<class T>
 List<T> &List<T>::operator=(const List<T> &other) {
+    if (this == &other)
+        return *this;
+
     this->clear();
     int length = other.length();
     for (int i = 0; i < length; i++) {

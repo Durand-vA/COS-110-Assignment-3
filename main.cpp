@@ -472,5 +472,62 @@ int main(){
     t3();
     t4();
 
+    CLinkedList<int> circList5;
+    circList5.insert(2,0);
+    circList5.insert(1,0);
+    circList5.insert(3,2);
+    circList5.insert(0,0);
+    circList5.print();
+    circList5.insert(2,1);
+    circList5.print();
+    circList5.insert(2,5);
+    circList5.print();
+
+    CLinkedList<int> circList6;
+    CLinkedList<int> circList7;
+
+    // append three 2's to circlist5 and circlist6
+    for (int i = 0; i < 3; i++) {
+        circList6.append(2);
+        circList7.append(2);
+    }
+    circList6.print();
+    circList7.print();
+    std::cout << (circList6 == circList7) << '\n';
+
+    CLinkedList<int> circList8;
+    circList8.append(1);
+    circList8.append(2);
+    std::cout << "reversing two element list:\n";
+    circList8.print();
+    circList8.reverse();
+    circList8.print();
+
+    CLinkedList<int> circList9;
+    circList9.append(1);
+    circList9.append(2);
+    circList9.append(3);
+    circList9.append(4);
+    std::cout << "reversing four element list:\n";
+    circList9.print();
+    circList9.reverse();
+    circList9.print();
+
+    // Reverse one element list
+    CLinkedList<int> circList10;
+    circList10.append(1);
+    std::cout << "reversing one element list:\n";
+    circList10.print();
+    circList10.reverse();
+    circList10.print();
+
+    // Reverse empty list
+    CLinkedList<int> circList11;
+    std::cout << "reversing empty list:\n";
+    circList11.print();
+    circList11.reverse();
+    circList11.print();
+
+
     return 0;
 }

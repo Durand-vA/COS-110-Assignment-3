@@ -101,25 +101,25 @@ void CLinkedList<T>::insert(T data, int index) {
     if (index < 0 || index > length) {
         return;
     }
-    if (index == length) {
-        append(data);
+    if (!head || index == 0) {
+        prepend(data);
         return;
     }
+//    if (index == length) {
+//        append(data);
+//        return;
+//    }
 
     Node<T>* ptr = head;
-    Node<T>* prev = NULL;
-    int count = 0;
-    while (count < index && ptr && ptr->next != head) {
-        prev = ptr;
+//    Node<T>* prev = NULL;
+    int idx = 1;
+    while (idx != index/* && ptr != head*/) {
+//        prev = ptr;
         ptr = ptr->next;
-        count++;
+        idx++;
     }
 
-    if (!prev) {
-        prepend(data);
-    } else {
-        prev->next = new Node<T>(data, ptr);
-    }
+    ptr->next = new Node<T>(data, ptr->next);
 }
 
 template<class T>
@@ -167,20 +167,35 @@ void CLinkedList<T>::print() const {
 
 template<class T>
 void CLinkedList<T>::reverse() {
-    if (!head) {
+    if (!head || head->next == head) {
         return;
     }
+
     Node<T>* ptr = head;
-    CLinkedList<T> reversed;
-    reversed.prepend(ptr->data);
+    Node<T>* prev = NULL;
+    Node<T>* next;
+    do {
+        next = ptr->next;
+        ptr->next = prev;
+        prev = ptr;
+        ptr = next;
+    } while (ptr != head);
 
-    ptr = ptr->next;
+    head->next = prev;
+    head = prev;
 
-    while (ptr && ptr != head) {
-        reversed.prepend(ptr->data);
-        ptr = ptr->next;
-    }
-    *this = reversed;
+
+//    Node<T>* ptr = head;
+//    CLinkedList<T> reversed;
+//    reversed.prepend(ptr->data);
+//
+//    ptr = ptr->next;
+//
+//    while (ptr && ptr != head) {
+//        reversed.prepend(ptr->data);
+//        ptr = ptr->next;
+//    }
+//    *this = reversed;
 }
 
 template<class T>
@@ -288,6 +303,9 @@ bool match(T data, T query, operation p) {
  */
 template<class T>
 void CLinkedList<T>::filter(std::string op, T query) {
+    if (!head) {
+        return;
+    }
     operation p;
     if (op == "<") {
         p = less;
@@ -320,7 +338,7 @@ void CLinkedList<T>::filter(std::string op, T query) {
             ptr = NULL;
         }
     }
-    if (!match(ptr->data, query, p)) {
+    if (ptr && !match(ptr->data, query, p)) {
         remove(count);
     }
 }
@@ -383,6 +401,8 @@ void CLinkedList<T>::slice(int start, int end) {
 
 template<class T>
 void CLinkedList<T>::RRotate(int k) {
+    if (k <= 0 || !head)
+        return;
     int length = this->length();
     LRotate(length - (k%length));
 }
@@ -510,7 +530,7 @@ bool CLinkedList<T>::operator==(const CLinkedList<T> &other) const {
     } while (ptr != other.head);
 
     bool equal = true;
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < length && elementCount[i]; i++) {
         equal = equal && (*elementCount[i] == 0);
     }
 
@@ -584,6 +604,11 @@ template<class T>
 void CLinkedList<T>::consume(CLinkedList<T> &other) {
     if (!other.head || this == &other) {
         return;
+    }
+
+    if (!head) {
+        head = other.head;
+        other.head = NULL;
     }
 
     Node<T>* tail = head;
