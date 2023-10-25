@@ -8,7 +8,7 @@
 #include "CLinkedList.cpp"
 #include "List.cpp"
 #include "Stack.h"
-//#include "Stack.cpp"
+#include "Stack.cpp"
 #include "Queue.h"
 //#include "Queue.cpp"
 
@@ -398,5 +398,36 @@ int main(){
 
 
     delete minus;
+
+
+    Stack<int> stack1;
+    // push some data to the stack
+    stack1.push(1);
+    stack1.push(2);
+    stack1.push(3);
+    stack1.push(4);
+    stack1.push(5);
+    stack1.push(6);
+
+    // print the stack
+    std::cout << "Popping the stack:\n";
+    while (!stack1.isEmpty()) {
+        cout << stack1.pop() << endl;
+    }
+    stack1.push(1);
+    stack1.push(2);
+    stack1.push(3);
+    stack1.push(4);
+    stack1.push(5);
+    stack1.push(6);
+
+    std::cout << "Peeking the stack:\n" << stack1.peek() << std::endl;
+
+    // Test copy constructor
+    Stack<int> stack2(stack1);
+    std::cout << "Testing copy constructor:\n";
+    while (!stack2.isEmpty()) {
+        cout << stack2.pop() << endl;
+    }
     return 0;
 }

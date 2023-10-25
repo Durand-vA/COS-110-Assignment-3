@@ -177,6 +177,30 @@ List.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment_3.dir/build.make CMakeFiles/Assignment_3.dir/List.cpp.s
 .PHONY : List.cpp.s
 
+Stack.o: Stack.cpp.o
+.PHONY : Stack.o
+
+# target to build an object file
+Stack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment_3.dir/build.make CMakeFiles/Assignment_3.dir/Stack.cpp.o
+.PHONY : Stack.cpp.o
+
+Stack.i: Stack.cpp.i
+.PHONY : Stack.i
+
+# target to preprocess a source file
+Stack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment_3.dir/build.make CMakeFiles/Assignment_3.dir/Stack.cpp.i
+.PHONY : Stack.cpp.i
+
+Stack.s: Stack.cpp.s
+.PHONY : Stack.s
+
+# target to generate assembly for a file
+Stack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment_3.dir/build.make CMakeFiles/Assignment_3.dir/Stack.cpp.s
+.PHONY : Stack.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... List.o"
 	@echo "... List.i"
 	@echo "... List.s"
+	@echo "... Stack.o"
+	@echo "... Stack.i"
+	@echo "... Stack.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 98)
 
 add_executable(Assignment_3 main.cpp
         CLinkedList.cpp
-        List.cpp)
+        List.cpp
+        Stack.cpp)

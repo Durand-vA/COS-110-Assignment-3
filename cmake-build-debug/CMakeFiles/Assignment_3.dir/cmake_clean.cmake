@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Assignment_3.dir/CLinkedList.cpp.o.d"
   "CMakeFiles/Assignment_3.dir/List.cpp.o"
   "CMakeFiles/Assignment_3.dir/List.cpp.o.d"
+  "CMakeFiles/Assignment_3.dir/Stack.cpp.o"
+  "CMakeFiles/Assignment_3.dir/Stack.cpp.o.d"
   "CMakeFiles/Assignment_3.dir/main.cpp.o"
   "CMakeFiles/Assignment_3.dir/main.cpp.o.d"
 )
