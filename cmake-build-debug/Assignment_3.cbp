@@ -94,6 +94,12 @@
 		<Unit filename="/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/List.h">
 			<Option target="Assignment_3"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/Queue.cpp">
+			<Option target="Assignment_3"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/Queue.h">
+			<Option target="Assignment_3"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/Stack.cpp">
 			<Option target="Assignment_3"/>
 		</Unit>

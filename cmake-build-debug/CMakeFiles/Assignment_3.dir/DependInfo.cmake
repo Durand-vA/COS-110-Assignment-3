@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/CLinkedList.cpp" "CMakeFiles/Assignment_3.dir/CLinkedList.cpp.o" "gcc" "CMakeFiles/Assignment_3.dir/CLinkedList.cpp.o.d"
   "/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/List.cpp" "CMakeFiles/Assignment_3.dir/List.cpp.o" "gcc" "CMakeFiles/Assignment_3.dir/List.cpp.o.d"
+  "/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/Queue.cpp" "CMakeFiles/Assignment_3.dir/Queue.cpp.o" "gcc" "CMakeFiles/Assignment_3.dir/Queue.cpp.o.d"
   "/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/Stack.cpp" "CMakeFiles/Assignment_3.dir/Stack.cpp.o" "gcc" "CMakeFiles/Assignment_3.dir/Stack.cpp.o.d"
   "/mnt/c/Users/vanaa/OneDrive - University of Pretoria/1st Year/Semester 2/COS 110/Assignments/Assignment 3/Assignment 3/main.cpp" "CMakeFiles/Assignment_3.dir/main.cpp.o" "gcc" "CMakeFiles/Assignment_3.dir/main.cpp.o.d"
   )
