@@ -324,9 +324,10 @@ void CLinkedList<T>::filter(std::string op, T query) {
     }
 
     Node<T>* ptr = head;
+    Node<T>* nextNode;
     int count = 0;
-    while (ptr && ptr->next != head) {
-        Node<T>* nextNode = ptr->next;
+    do {
+        nextNode = ptr->next;
         if (!match(ptr->data, query, p)) {
             remove(count);
         } else {
@@ -337,10 +338,27 @@ void CLinkedList<T>::filter(std::string op, T query) {
         else {
             ptr = NULL;
         }
-    }
+    } while (ptr && ptr->next != head);
+
     if (ptr && !match(ptr->data, query, p)) {
         remove(count);
     }
+//    while (ptr && ptr->next != head) {
+//        Node<T>* nextNode = ptr->next;
+//        if (!match(ptr->data, query, p)) {
+//            remove(count);
+//        } else {
+//            count++;
+//        }
+//        if (head)
+//            ptr = nextNode;
+//        else {
+//            ptr = NULL;
+//        }
+//    }
+//    if (ptr && !match(ptr->data, query, p)) {
+//        remove(count);
+//    }
 }
 
 template<class T>
@@ -383,20 +401,29 @@ void CLinkedList<T>::slice(int start, int end) {
 
     Node<T>* ptr = head;
 
-    CLinkedList<T> sliced;
+//    CLinkedList<T> sliced;
+    Node<T>* next;
 
     int idx = 0, count = 0;
     do {
-        if (idx >= start) {
-            sliced.append(ptr->data);
-        } else {
+        next = ptr->next;
+        if (idx >= start && idx <= end) {
+//            sliced.append(ptr->data);
             count++;
+        } else {
+            this->remove(count);
         }
         idx++;
-        ptr = ptr->next;
-    } while (idx <= end && ptr != head);
+        if (head) {
+            ptr = next;
+        } else {
+            ptr = NULL;
+        }
+    } while (idx < length/*idx <= end && *//*ptr && ptr->next != head*/);
 
-    *this = sliced;
+//    if ((idx) != end) {
+//        remove(count);
+//    }
 }
 
 template<class T>
@@ -609,6 +636,7 @@ void CLinkedList<T>::consume(CLinkedList<T> &other) {
     if (!head) {
         head = other.head;
         other.head = NULL;
+        return;
     }
 
     Node<T>* tail = head;

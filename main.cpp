@@ -231,6 +231,9 @@ int main(){
     CLinkedList<int> circList3Copy;
     circList3Copy = circList3;
 
+
+    std::cout << "\nCircList3: ";
+    circList3.print();
     std::cout << "Slicing circList3 from 0 to 0\n";
     circList3.slice(0,0);
     circList3.print();
@@ -241,6 +244,18 @@ int main(){
     circList3 = circList3Copy;
     std::cout << "Slicing circList3 from 8 to 8\n";
     circList3.slice(8,8);
+    circList3.print();
+    circList3 = circList3Copy;
+    std::cout << "Slicing circList3 from 0 to 8\n";
+    circList3.slice(0,8);
+    circList3.print();
+    circList3 = circList3Copy;
+    std::cout << "Slicing circList3 from 7 to 8\n";
+    circList3.slice(7,8);
+    circList3.print();
+    circList3 = circList3Copy;
+    std::cout << "Slicing circList3 from 0 to 2\n";
+    circList3.slice(0,2);
     circList3.print();
     circList3 = circList3Copy;
 
@@ -472,10 +487,15 @@ int main(){
     t3();
     t4();
 
+    std::cout << "My tests again\n";
+
     CLinkedList<int> circList5;
     circList5.insert(2,0);
+    circList5.print();
     circList5.insert(1,0);
+    circList5.print();
     circList5.insert(3,2);
+    circList5.print();
     circList5.insert(0,0);
     circList5.print();
     circList5.insert(2,1);
