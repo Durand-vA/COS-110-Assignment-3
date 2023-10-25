@@ -279,7 +279,13 @@ bool match(T data, T query, operation p) {
             return false;
     }
 }
-
+/**
+ * @brief Filters the list based on the given operation and query
+ *
+ * @tparam T
+ * @param op ">", "<", ">=", "<=", "==", "!="
+ * @param query
+ */
 template<class T>
 void CLinkedList<T>::filter(std::string op, T query) {
     operation p;
@@ -535,15 +541,15 @@ void CLinkedList<T>::operator+=(const CLinkedList<T> &other) {
 
 template<class T>
 CLinkedList<T>* CLinkedList<T>::operator-(const CLinkedList<T> &other) const {
-    CLinkedList<T> out;
-    out = *this;
+    CLinkedList<T>* out = new CLinkedList<T>;
+    *out = *this;
 
     if (!other.head)
         return out;
 
     Node<T>* ptr = other.head;
     do {
-        out.removeElements(ptr->data);
+        out->removeElements(ptr->data);
         ptr = ptr->next;
     } while (ptr != other.head);
 

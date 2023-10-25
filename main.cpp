@@ -309,7 +309,94 @@ int main(){
     circList4.print();
     circList3.print();
 
+    circList3 = circList3Copy;
+
+    std::cout << "Subtraction (circList4 - circList3:\n"
+            << "circList4: ";
+    circList4.print();
+    std::cout << "circList3: ";
+    circList3.print();
+    CLinkedList<int>* minus = circList4 - circList3;
+    minus->print();
+
+    circList4 = *minus;
+    std::cout << "Addition:\n";
+    std::cout << "circList4: ";
+    circList4.print();
+    std::cout << "circList3: ";
+    circList3.print();
+    circList4 += circList3;
+    circList4.print();
+
+    std::cout << "Testing swap funct.\n";
+    std::cout << "Swapping index 4 with index 6 in circList4\n";
+    circList4.swap(4,6);
+    circList4.print();
+    std::cout << "Swapping index 0 with index 0 in circList4\n";
+    circList4.swap(0,0);
+    circList4.print();
+    std::cout << "Swapping index 0 with index 1 in circList4\n";
+    circList4.swap(0,1);
+    circList4.print();
+    std::cout << "Swapping index 1 with index 0 in circList4\n";
+    circList4.swap(1,0);
+    circList4.print();
+    std::cout << "Swapping index 0 with last index in circList4\n";
+    circList4.swap(0, circList4.length() - 1);
+    circList4.print();
+    std::cout << "Swapping last index with index 0 in circList4\n";
+    circList4.swap(circList4.length() - 1, 0);
+    circList4.print();
+
+    circList4Copy = circList4;
+
+    // Test the filter function on circlist4, printing after every test
+    std::cout << "Filtering for < 5\n";
+    circList4.filter("<", 5);
+    circList4.print();
+    circList4 = circList4Copy;
+    std::cout << "Filtering for > 5\n";
+    circList4.filter(">", 5);
+    circList4.print();
+    circList4 = circList4Copy;
+    std::cout << "Filtering for == 5\n";
+    circList4.filter("==", 5);
+    circList4.print();
+    circList4 = circList4Copy;
+    std::cout << "Filtering for <= 5\n";
+    circList4.filter("<=", 5);
+    circList4.print();
+    circList4 = circList4Copy;
+    std::cout << "Filtering for >= 5\n";
+    circList4.filter(">=", 5);
+    circList4.print();
+    circList4 = circList4Copy;
+    std::cout << "Filtering for != 5\n";
+    circList4.filter("!=", 5);
+    circList4.print();
+    circList4 = circList4Copy;
+    std::cout << "Filtering for < 1\n";
+    circList4.filter("<", 1);
+    circList4.print();
+
+    // Test insert function, printing after every test
+    std::cout << "Inserting 12 at index 0\n";
+    circList4.insert(12, 0);
+    circList4.print();
+    std::cout << "Inserting 13 at index 1\n";
+    circList4.insert(13, 1);
+    circList4.print();
+    std::cout << "Inserting 14 at index 2\n";
+    circList4.insert(14, 2);
+    circList4.print();
+    std::cout << "Inserting 15 at last index\n";
+    circList4.insert(15, circList4.length()-1);
+    circList4.print();
+    std::cout << "Inserting 16 at end\n";
+    circList4.insert(16, circList4.length());
+    circList4.print();
 
 
+    delete minus;
     return 0;
 }
